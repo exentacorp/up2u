@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+// Конфигурация для GitHub Pages
 const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
