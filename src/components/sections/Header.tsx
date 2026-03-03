@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -36,10 +35,7 @@ export function Header() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+      <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled || !isHomePage
             ? 'bg-white/95 backdrop-blur-md shadow-lg'
@@ -98,72 +94,61 @@ export function Header() {
             </button>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/50 z-50"
-            />
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-[90vw] bg-white z-50 shadow-2xl"
-            >
-              <div className="flex items-center justify-between p-4 border-b">
-                <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                  <span className="text-2xl font-bold">
-                    UP<span className="text-[oklch(0.72_0.18_150)]">2</span>U
-                  </span>
-                </Link>
-                <button
+      {isMobileMenuOpen && (
+        <>
+          <div
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="fixed inset-0 bg-black/50 z-50 animate-fade-in"
+          />
+          <div className="fixed top-0 right-0 bottom-0 w-80 max-w-[90vw] bg-white z-50 shadow-2xl animate-slide-in-right">
+            <div className="flex items-center justify-between p-4 border-b">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                <span className="text-2xl font-bold">
+                  UP<span className="text-[oklch(0.72_0.18_150)]">2</span>U
+                </span>
+              </Link>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-gray-500 hover:text-gray-700"
+                aria-label="Закрыть меню"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <nav className="p-4">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 text-gray-500 hover:text-gray-700"
-                  aria-label="Закрыть меню"
+                  className="block py-3 text-lg font-medium text-[oklch(0.31_0.04_250)] hover:text-[oklch(0.72_0.18_150)] transition-colors border-b border-gray-100 last:border-0"
                 >
-                  <X className="h-6 w-6" />
-                </button>
+                  {item.name}
+                </Link>
+              ))}
+              <div className="mt-6 pt-6 border-t">
+                <a
+                  href="tel:+79140893989"
+                  className="flex items-center gap-3 text-[oklch(0.31_0.04_250)] mb-4"
+                >
+                  <Phone className="h-5 w-5 text-[oklch(0.72_0.18_150)]" />
+                  <span className="font-medium">+7 (914) 089-39-89</span>
+                </a>
+                <Link href="/contacts" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button
+                    className="w-full bg-[oklch(0.72_0.18_150)] hover:bg-[oklch(0.55_0.15_150)] text-white rounded-full"
+                  >
+                    Оставить заявку
+                  </Button>
+                </Link>
               </div>
-              <nav className="p-4">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-3 text-lg font-medium text-[oklch(0.31_0.04_250)] hover:text-[oklch(0.72_0.18_150)] transition-colors border-b border-gray-100 last:border-0"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="mt-6 pt-6 border-t">
-                  <a
-                    href="tel:+79140893989"
-                    className="flex items-center gap-3 text-[oklch(0.31_0.04_250)] mb-4"
-                  >
-                    <Phone className="h-5 w-5 text-[oklch(0.72_0.18_150)]" />
-                    <span className="font-medium">+7 (914) 089-39-89</span>
-                  </a>
-                  <Link href="/contacts" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button
-                      className="w-full bg-[oklch(0.72_0.18_150)] hover:bg-[oklch(0.55_0.15_150)] text-white rounded-full"
-                    >
-                      Оставить заявку
-                    </Button>
-                  </Link>
-                </div>
-              </nav>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            </nav>
+          </div>
+        </>
+      )}
     </>
   );
 }

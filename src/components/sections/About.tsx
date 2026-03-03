@@ -1,9 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
 import { Calendar, Users, Award, MapPin, Briefcase, TrendingUp } from 'lucide-react';
+import { useRef, useEffect, useState } from 'react';
 
 const stats = [
   {
@@ -53,11 +51,28 @@ const stats = [
 
 function AnimatedNumber({ value, suffix = '', prefix = '' }: { value: number; suffix?: string; prefix?: string }) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (isInView) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (isVisible) {
       const duration = 2000;
       const steps = 60;
       const stepValue = value / steps;
@@ -73,7 +88,7 @@ function AnimatedNumber({ value, suffix = '', prefix = '' }: { value: number; su
       }, duration / steps);
       return () => clearInterval(timer);
     }
-  }, [isInView, value]);
+  }, [isVisible, value]);
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) {
@@ -95,20 +110,31 @@ function AnimatedNumber({ value, suffix = '', prefix = '' }: { value: number; su
 }
 
 export function About() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1, rootMargin: '-100px' }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-white">
+    <section id="about" ref={containerRef} className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <motion.div
-          ref={containerRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="text-[oklch(0.72_0.18_150)] font-semibold text-lg mb-2 block">
             О компании
           </span>
@@ -120,17 +146,15 @@ export function About() {
             С 2019 года команда реализует события, которые объединяют людей, бренды и города —
             от федеральных фестивалей и городских праздников до камерных корпоративных форматов.
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group"
+              className={`relative group transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="bg-[oklch(0.97_0_0)] rounded-2xl p-6 md:p-8 hover:bg-[oklch(0.95_0_0)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-transparent hover:border-[oklch(0.72_0.18_150/0.2)]">
                 <div className="flex items-start justify-between mb-4">
@@ -144,16 +168,14 @@ export function About() {
                 </div>
                 <div className="text-sm text-gray-500">{stat.description}</div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Mission Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-br from-[oklch(0.72_0.18_150)] to-[oklch(0.55_0.15_150)] rounded-3xl p-8 md:p-12 text-white"
+        <div 
+          className={`mt-16 bg-gradient-to-br from-[oklch(0.72_0.18_150)] to-[oklch(0.55_0.15_150)] rounded-3xl p-8 md:p-12 text-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          style={{ transitionDelay: '800ms' }}
         >
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Наша миссия</h3>
@@ -163,7 +185,7 @@ export function About() {
               и технической реализации мероприятий любого масштаба.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

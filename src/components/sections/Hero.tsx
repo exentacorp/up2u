@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ArrowDown, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
@@ -57,15 +56,11 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slides */}
       {slides.map((slide, index) => (
-        <motion.div
+        <div
           key={slide.id}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ 
-            opacity: index === currentSlide ? 1 : 0,
-            scale: index === currentSlide ? 1 : 1.1
-          }}
-          transition={{ duration: 1.2, ease: 'easeInOut' }}
-          className="absolute inset-0"
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+            index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+          }`}
         >
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
@@ -79,7 +74,7 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
           {/* Brand color overlay */}
           <div className="absolute inset-0 bg-[oklch(0.72_0.18_150/0.1)]" />
-        </motion.div>
+        </div>
       ))}
 
       {/* Decorative elements */}
@@ -90,74 +85,49 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-5xl mx-auto"
-        >
+        <div className="max-w-5xl mx-auto animate-fade-in">
           {/* Logo */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6"
-          >
+          <div className="mb-6 animate-scale-in">
             <span className="text-6xl md:text-8xl font-bold tracking-tight drop-shadow-2xl">
               UP<span className="text-[oklch(0.72_0.18_150)]">2</span>U
             </span>
-          </motion.div>
+          </div>
 
           {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/70 mb-8 tracking-wide"
-          >
+          <p className="text-lg md:text-xl text-white/70 mb-8 tracking-wide animate-fade-in-delay-1">
             ИВЕНТ-АГЕНТСТВО ПОЛНОГО ЦИКЛА
-          </motion.p>
+          </p>
 
           {/* Animated Title */}
           <div className="relative h-24 md:h-32 mb-4">
             {slides.map((slide, index) => (
-              <motion.h1
+              <h1
                 key={slide.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ 
-                  opacity: index === currentSlide ? 1 : 0, 
-                  y: index === currentSlide ? 0 : 30 
-                }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-3xl md:text-5xl lg:text-6xl font-bold absolute left-0 right-0 drop-shadow-lg"
+                className={`text-3xl md:text-5xl lg:text-6xl font-bold absolute left-0 right-0 drop-shadow-lg transition-all duration-600 ${
+                  index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
                 {slide.title}
-              </motion.h1>
+              </h1>
             ))}
           </div>
 
           {/* Subtitle */}
           <div className="relative h-8 mb-10">
             {slides.map((slide, index) => (
-              <motion.p
+              <p
                 key={slide.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: index === currentSlide ? 1 : 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-xl md:text-2xl text-white/80 absolute left-0 right-0"
+                className={`text-xl md:text-2xl text-white/80 absolute left-0 right-0 transition-all duration-600 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
               >
                 {slide.subtitle}
-              </motion.p>
+              </p>
             ))}
           </div>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-2">
             <Button
               size="lg"
               className="bg-[oklch(0.72_0.18_150)] hover:bg-[oklch(0.55_0.15_150)] text-white px-10 py-7 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -174,44 +144,28 @@ export function Hero() {
               <Play className="mr-2 h-5 w-5" />
               Наши услуги
             </Button>
-          </motion.div>
+          </div>
 
           {/* Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16"
-          >
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 animate-fade-in-delay-3">
             {[
               { value: '6+', label: 'лет работы' },
               { value: '500+', label: 'мероприятий' },
               { value: '500K+', label: 'участников' },
               { value: '150+', label: 'партнёров' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                className="text-center"
-              >
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-[oklch(0.72_0.18_150)]">
                   {stat.value}
                 </div>
                 <div className="text-sm md:text-base text-white/60">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Slide Indicators */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3"
-        >
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 animate-fade-in-delay-4">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -224,23 +178,14 @@ export function Hero() {
               aria-label={`Перейти к слайду ${index + 1}`}
             />
           ))}
-        </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 12, 0] }}
-          transition={{ delay: 1.5, duration: 2, repeat: Infinity }}
-          className="absolute bottom-20 left-1/2 -translate-x-1/2"
-        >
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-8 h-12 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-            <motion.div
-              animate={{ y: [0, 16, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 rounded-full bg-white/60"
-            />
+            <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-scroll" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

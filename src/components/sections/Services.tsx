@@ -1,8 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { 
   Trophy, 
   Music, 
@@ -127,22 +125,33 @@ export const serviceCategories = [
 ];
 
 export function Services({ showAll = false }: { showAll?: boolean }) {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1, rootMargin: '-100px' }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const displayedServices = showAll ? serviceCategories : serviceCategories.slice(0, 3);
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-[oklch(0.97_0_0)]">
+    <section id="services" ref={containerRef} className="py-20 md:py-32 bg-[oklch(0.97_0_0)]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <motion.div
-          ref={containerRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="text-[oklch(0.72_0.18_150)] font-semibold text-lg mb-2 block">
             Наши услуги
           </span>
@@ -152,16 +161,15 @@ export function Services({ showAll = false }: { showAll?: boolean }) {
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Полный цикл организации мероприятий: от разработки концепции до технической реализации
           </p>
-        </motion.div>
+        </div>
 
         {/* Service Categories */}
         <div className={`grid gap-6 md:gap-8 mb-16 ${showAll ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-3'}`}>
           {displayedServices.map((category, index) => (
-            <motion.div
+            <div
               key={category.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <Card className="h-full overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                 <CardContent className="p-0">
@@ -195,18 +203,13 @@ export function Services({ showAll = false }: { showAll?: boolean }) {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Show More Button */}
         {!showAll && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center"
-          >
+          <div className={`text-center transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '800ms' }}>
             <Link href="/services">
               <Button
                 size="lg"
@@ -217,7 +220,7 @@ export function Services({ showAll = false }: { showAll?: boolean }) {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

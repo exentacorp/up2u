@@ -1,8 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -24,7 +22,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useState } from 'react';
 import { CheckCircle2, Loader2, Send } from 'lucide-react';
 
 const formSchema = z.object({
@@ -46,10 +43,27 @@ const eventTypes = [
 ];
 
 export function ContactForm() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1, rootMargin: '-100px' }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -77,16 +91,11 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-[oklch(0.97_0_0)]">
+    <section id="contact" ref={containerRef} className="py-20 md:py-32 bg-[oklch(0.97_0_0)]">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <motion.div
-            ref={containerRef}
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <span className="text-[oklch(0.72_0.18_150)] font-semibold text-lg mb-2 block">
               Свяжитесь с нами
             </span>
@@ -142,21 +151,13 @@ export function ContactForm() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '200ms' }}>
             <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl">
               {isSuccess ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
-                >
+                <div className="text-center py-12">
                   <div className="w-20 h-20 rounded-full bg-[oklch(0.95_0.12_150)] flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="h-10 w-10 text-[oklch(0.72_0.18_150)]" />
                   </div>
@@ -166,7 +167,7 @@ export function ContactForm() {
                   <p className="text-gray-600">
                     Мы свяжемся с вами в ближайшее время
                   </p>
-                </motion.div>
+                </div>
               ) : (
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -270,7 +271,7 @@ export function ContactForm() {
                 </Form>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
