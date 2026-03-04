@@ -380,6 +380,10 @@ p {
   overflow: hidden;
 }
 
+.hero h1 {
+  color: #ffffff;
+}
+
 .hero-slides {
   position: absolute;
   inset: 0;
@@ -989,12 +993,35 @@ p {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
   color: var(--white);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.case-badge.federal {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.case-badge.city {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.case-badge.corporate {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+}
+
+.case-badge.culture {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+}
+
+.case-badge.sport {
+  background: linear-gradient(135deg, #eab308, #f97316);
+}
+
+.case-badge.tech {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
 }
 
 .case-content {
@@ -1369,6 +1396,58 @@ p {
 @keyframes scrollDot {
   0%, 100% { transform: translateY(0); opacity: 1; }
   50% { transform: translateY(16px); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(46, 204, 113, 0.6); }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Delayed animations */
+.animate-fade-in-delay-1 {
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-4 {
+  animation: fadeIn 0.8s ease-out 0.8s forwards;
+  opacity: 0;
 }
 
 /* Animate on scroll */
