@@ -2,26 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   
-  // ===== Theme Toggle =====
-  const themeToggles = document.querySelectorAll('.theme-toggle');
-  const html = document.documentElement;
-  
-  // Check for saved theme preference or default to light
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  html.setAttribute('data-theme', savedTheme);
-  
-  function toggleTheme() {
-    const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  }
-  
-  // Add click handler to all theme toggle buttons
-  themeToggles.forEach(toggle => {
-    toggle.addEventListener('click', toggleTheme);
-  });
-  
   // ===== Mobile Menu =====
   const menuBtn = document.querySelector('.menu-btn');
   const mobileMenu = document.querySelector('.mobile-menu');
@@ -72,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.hero-slide');
   const titles = document.querySelectorAll('.hero-title');
   const subtitles = document.querySelectorAll('.hero-subtitle');
-  const indicators = document.querySelectorAll('.hero-indicator');
   let currentSlide = 0;
   let slideInterval;
 
@@ -92,11 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
       subtitle.classList.toggle('active', i === index);
     });
     
-    // Indicators
-    indicators.forEach((indicator, i) => {
-      indicator.classList.toggle('active', i === index);
-    });
-    
     currentSlide = index;
   }
 
@@ -109,23 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
     slideInterval = setInterval(nextSlide, 6000);
   }
 
-  function stopSlider() {
-    clearInterval(slideInterval);
-  }
-
   // Initialize slider
   if (slides.length > 0) {
     showSlide(0);
     startSlider();
-    
-    // Click on indicators
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        stopSlider();
-        showSlide(index);
-        startSlider();
-      });
-    });
   }
 
   // ===== Animate on Scroll =====
@@ -146,47 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }, observerOptions);
   
   animateElements.forEach(el => observer.observe(el));
-
-  // ===== Stats Counter Animation =====
-  const statValues = document.querySelectorAll('.stat-value[data-count]');
-  
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        const prefix = el.dataset.prefix || '';
-        const duration = 2000;
-        const steps = 60;
-        const stepValue = target / steps;
-        let current = 0;
-        
-        const timer = setInterval(() => {
-          current += stepValue;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          el.textContent = prefix + formatNumber(Math.floor(current)) + suffix;
-        }, duration / steps);
-        
-        statsObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  statValues.forEach(el => statsObserver.observe(el));
-
-  function formatNumber(num) {
-    if (num >= 1000000) {
-      return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-    }
-    if (num >= 1000) {
-      return (num / 1000).toFixed(0) + 'K';
-    }
-    return num.toString();
-  }
 
   // ===== Scroll to Top =====
   const scrollTopBtn = document.querySelector('.scroll-top');

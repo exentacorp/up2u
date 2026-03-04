@@ -7,16 +7,16 @@
   <meta name="description" content="UP2U — ивент-агентство полного цикла. Организация корпоративных мероприятий, городских праздников, спортивных фестивалей и культурных проектов в Москве и по всей России.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
   <!-- Header -->
   <header class="header header-transparent">
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="../public/logo.png" alt="UP2U">
+        <img src="logo.png" alt="UP2U">
       </a>
       <nav class="nav-desktop">
         <a href="#about" class="nav-link">О компании</a>
@@ -42,7 +42,7 @@
   <div class="mobile-menu">
     <div class="mobile-menu-header">
       <a href="index.html" class="logo">
-        <img src="../public/logo.png" alt="UP2U" style="height: 32px;">
+        <img src="logo.png" alt="UP2U" style="height: 32px;">
       </a>
       <button class="mobile-menu-close" aria-label="Закрыть меню">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -87,15 +87,8 @@
         <div class="hero-slide-overlay"></div>
       </div>
     </div>
-    <div class="hero-decor">
-      <div class="hero-decor-circle"></div>
-      <div class="hero-decor-circle"></div>
-    </div>
     <div class="hero-content">
-      <div class="hero-logo animate-scale-in">
-        <img src="../public/logo.png" alt="UP2U">
-      </div>
-      <p class="hero-tagline animate-fade-in-delay-1">ИВЕНТ-АГЕНТСТВО ПОЛНОГО ЦИКЛА</p>
+      <p class="hero-tagline">ИВЕНТ-АГЕНТСТВО ПОЛНОГО ЦИКЛА</p>
       <div class="hero-title-wrap">
         <h1 class="hero-title active">Создаём события, которые запоминаются</h1>
         <h1 class="hero-title">Масштабные городские проекты</h1>
@@ -110,14 +103,11 @@
         <p class="hero-subtitle">Всероссийские и региональные спортивные события</p>
         <p class="hero-subtitle">Яркие выступления и незабываемые шоу</p>
       </div>
-      <div class="hero-buttons animate-fade-in-delay-2">
+      <div class="hero-buttons">
         <button class="btn btn-primary btn-lg hero-btn-contact">Оставить заявку</button>
-        <button class="btn btn-ghost btn-lg hero-btn-services">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-          Наши услуги
-        </button>
+        <button class="btn btn-outline btn-lg hero-btn-services">Наши услуги</button>
       </div>
-      <div class="hero-stats animate-fade-in-delay-3">
+      <div class="hero-stats">
         <div class="hero-stat">
           <div class="hero-stat-value">6+</div>
           <div class="hero-stat-label">лет работы</div>
@@ -136,11 +126,6 @@
         </div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <div class="hero-scroll-inner">
-        <div class="hero-scroll-dot"></div>
-      </div>
-    </div>
   </section>
 
   <!-- About Section -->
@@ -149,42 +134,36 @@
       <div class="section-header animate-on-scroll">
         <span class="section-label">О компании</span>
         <h2 class="section-title">UP2U — креативное ивент-агентство</h2>
-        <p class="section-desc">Создаём масштабные городские, корпоративные и культурные проекты по всей России. С 2019 года команда реализует события, которые объединяют людей, бренды и города.</p>
+        <p class="section-desc">Создаём масштабные городские, корпоративные и культурные проекты по всей России. С 2019 года команда реализует события, которые объединяют людей, бренды и города — от федеральных фестивалей и городских праздников до камерных корпоративных форматов.</p>
       </div>
       <div class="stats-grid">
         <div class="stat-card animate-on-scroll">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-          <div class="stat-value" data-count="6" data-suffix="+">0+</div>
+          <div class="stat-value">6+</div>
           <div class="stat-label">лет работы</div>
           <div class="stat-desc">с 2019 года</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
-          <div class="stat-value" data-count="500" data-suffix="+">0+</div>
+          <div class="stat-value">500+</div>
           <div class="stat-label">мероприятий</div>
           <div class="stat-desc">реализовано</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <div class="stat-value" data-count="500000" data-suffix="+">0+</div>
+          <div class="stat-value">500K+</div>
           <div class="stat-label">участников</div>
           <div class="stat-desc">на наших событиях</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          <div class="stat-value" data-count="55" data-suffix="+">0+</div>
+          <div class="stat-value">55+</div>
           <div class="stat-label">площадок</div>
           <div class="stat-desc">по всей Москве</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          <div class="stat-value" data-count="10" data-suffix="+">0+</div>
+          <div class="stat-value">10+</div>
           <div class="stat-label">федеральных заказчиков</div>
           <div class="stat-desc">доверяют нам</div>
         </div>
         <div class="stat-card animate-on-scroll">
-          <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
-          <div class="stat-value" data-count="150" data-prefix="до " data-suffix=" млн">до 0 млн</div>
+          <div class="stat-value">до 150 млн</div>
           <div class="stat-label">бюджет проектов</div>
           <div class="stat-desc">от 2.5 млн рублей</div>
         </div>
@@ -209,7 +188,6 @@
           <div class="service-image">
             <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="Спортивные события">
             <div class="service-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
               <h3 class="service-title">Спортивные события</h3>
             </div>
           </div>
@@ -220,7 +198,6 @@
               <li class="service-list-item"><span class="service-list-dot"></span><span>Дни спорта и Олимпийские дни</span></li>
               <li class="service-list-item"><span class="service-list-dot"></span><span>Марафоны и велофестивали</span></li>
               <li class="service-list-item"><span class="service-list-dot"></span><span>Праздники ГТО</span></li>
-              <li class="service-list-item"><span class="service-list-dot"></span><span>День футбола, День бега</span></li>
             </ul>
           </div>
         </div>
@@ -228,7 +205,6 @@
           <div class="service-image">
             <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80" alt="Культурные проекты">
             <div class="service-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
               <h3 class="service-title">Культурные проекты</h3>
             </div>
           </div>
@@ -239,7 +215,6 @@
               <li class="service-list-item"><span class="service-list-dot"></span><span>Театрализованные перформансы</span></li>
               <li class="service-list-item"><span class="service-list-dot"></span><span>Литературные вечера</span></li>
               <li class="service-list-item"><span class="service-list-dot"></span><span>Арт-пространства под открытым небом</span></li>
-              <li class="service-list-item"><span class="service-list-dot"></span><span>Творческие мастерские</span></li>
             </ul>
           </div>
         </div>
@@ -247,7 +222,6 @@
           <div class="service-image">
             <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Корпоративные мероприятия">
             <div class="service-overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               <h3 class="service-title">Корпоративные мероприятия</h3>
             </div>
           </div>
@@ -258,13 +232,12 @@
               <li class="service-list-item"><span class="service-list-dot"></span><span>Конференции и бизнес-форумы</span></li>
               <li class="service-list-item"><span class="service-list-dot"></span><span>Презентации продуктов</span></li>
               <li class="service-list-item"><span class="service-list-dot"></span><span>Юбилеи компаний</span></li>
-              <li class="service-list-item"><span class="service-list-dot"></span><span>Новогодние мероприятия</span></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="services-cta animate-on-scroll">
-        <a href="services.html" class="btn btn-outline btn-lg">
+        <a href="services.html" class="btn btn-outline btn-lg" style="border-color: var(--black); color: var(--black);">
           Все услуги
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
@@ -282,11 +255,9 @@
       </div>
       <div class="cases-filters animate-on-scroll">
         <button class="filter-btn active" data-filter="all">Все проекты</button>
-        <button class="filter-btn" data-filter="federal">Федеральные</button>
-        <button class="filter-btn" data-filter="city">Городские</button>
-        <button class="filter-btn" data-filter="corporate">Корпоративные</button>
-        <button class="filter-btn" data-filter="culture">Культурные</button>
-        <button class="filter-btn" data-filter="sport">Спортивные</button>
+        <button class="filter-btn" data-filter="federal">Федеральный проект</button>
+        <button class="filter-btn" data-filter="city">Городской проект</button>
+        <button class="filter-btn" data-filter="corporate">Корпоративное</button>
       </div>
       <div class="cases-grid">
         <!-- Кейс 1 -->
@@ -294,7 +265,7 @@
           <div class="case-image">
             <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80" alt="Концерт к Международному женскому дню">
             <div class="case-overlay"></div>
-            <span class="case-badge corporate">Корпоративное</span>
+            <span class="case-badge">Корпоративное мероприятие</span>
           </div>
           <div class="case-content">
             <div class="case-meta">
@@ -304,7 +275,7 @@
               <span>г. Корсаков</span>
             </div>
             <h3 class="case-title">Концерт к Международному женскому дню</h3>
-            <p class="case-desc">Праздник превратил городской зал в атмосферу тепла, музыки и признательности</p>
+            <p class="case-desc">Праздник превратил городской зал в атмосферу тепла, музыки и признательности.</p>
             <div class="case-stats">
               <div class="case-stat">
                 <div class="case-stat-value">500</div>
@@ -318,7 +289,7 @@
           <div class="case-image">
             <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Октамен — профориентационный квест">
             <div class="case-overlay"></div>
-            <span class="case-badge culture">Культурное</span>
+            <span class="case-badge">Образовательный проект</span>
           </div>
           <div class="case-content">
             <div class="case-meta">
@@ -326,7 +297,7 @@
               <span>Февраль 2023</span>
             </div>
             <h3 class="case-title">«Октамен» — профориентационный квест</h3>
-            <p class="case-desc">Дети отправились в путешествие по миру профессий в игровом формате</p>
+            <p class="case-desc">Дети отправились в захватывающее путешествие по миру профессий.</p>
             <div class="case-stats">
               <div class="case-stat">
                 <div class="case-stat-value">1500</div>
@@ -340,7 +311,7 @@
           <div class="case-image">
             <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="День работников нефтяной и газовой промышленности">
             <div class="case-overlay"></div>
-            <span class="case-badge corporate">Корпоративное</span>
+            <span class="case-badge">Корпоративное мероприятие</span>
           </div>
           <div class="case-content">
             <div class="case-meta">
@@ -348,7 +319,7 @@
               <span>Сентябрь 2023–2024</span>
             </div>
             <h3 class="case-title">День работников нефтяной и газовой промышленности «Роснефть»</h3>
-            <p class="case-desc">Яркая шоу-программа и концерт сделали праздник событием регионального масштаба</p>
+            <p class="case-desc">Яркая шоу-программа и концерт сделали праздник событием регионального масштаба.</p>
             <div class="case-stats">
               <div class="case-stat">
                 <div class="case-stat-value">1500</div>
@@ -362,15 +333,15 @@
           <div class="case-image">
             <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80" alt="Реконструкция боевых действий">
             <div class="case-overlay"></div>
-            <span class="case-badge culture">Культурное</span>
+            <span class="case-badge">Патриотическое мероприятие</span>
           </div>
           <div class="case-content">
             <div class="case-meta">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
               <span>Август 2022–2025</span>
             </div>
-            <h3 class="case-title">Реконструкция боевых действий Великой Отечественной Войны</h3>
-            <p class="case-desc">Зрелищные постановки оживили страницы истории для зрителей</p>
+            <h3 class="case-title">Реконструкция боевых действий ВОВ</h3>
+            <p class="case-desc">Зрелищные постановки оживили страницы истории.</p>
             <div class="case-stats">
               <div class="case-stat">
                 <div class="case-stat-value">7000</div>
@@ -384,7 +355,7 @@
           <div class="case-image">
             <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="Всероссийский форум ОстроVa">
             <div class="case-overlay"></div>
-            <span class="case-badge federal">Федеральный проект</span>
+            <span class="case-badge">Федеральный проект</span>
           </div>
           <div class="case-content">
             <div class="case-meta">
@@ -392,7 +363,7 @@
               <span>Август 2022–2024</span>
             </div>
             <h3 class="case-title">Всероссийский форум «ОстроVa»</h3>
-            <p class="case-desc">Культурная программа форума объединила музыку, арт-проекты и интерактивные форматы</p>
+            <p class="case-desc">Культурная программа форума объединила музыку, арт-проекты и интерактивные форматы.</p>
             <div class="case-stats">
               <div class="case-stat">
                 <div class="case-stat-value">2000</div>
@@ -406,7 +377,7 @@
           <div class="case-image">
             <img src="https://images.unsplash.com/photo-1461896836934-28e4b8ed0cd0?w=800&q=80" alt="75-летие спортивной отрасли">
             <div class="case-overlay"></div>
-            <span class="case-badge sport">Спортивное</span>
+            <span class="case-badge">Юбилейное мероприятие</span>
           </div>
           <div class="case-content">
             <div class="case-meta">
@@ -414,7 +385,7 @@
               <span>Декабрь 2022</span>
             </div>
             <h3 class="case-title">75-летие спортивной отрасли Сахалинской области</h3>
-            <p class="case-desc">Юбилей стал символом преемственности поколений и праздником спортивных достижений</p>
+            <p class="case-desc">Юбилей стал символом преемственности поколений и праздником спортивных достижений.</p>
             <div class="case-stats">
               <div class="case-stat">
                 <div class="case-stat-value">350</div>
@@ -425,7 +396,7 @@
         </div>
       </div>
       <div class="cases-cta animate-on-scroll">
-        <a href="cases.html" class="btn btn-outline btn-lg">
+        <a href="cases.html" class="btn btn-outline btn-lg" style="border-color: var(--black); color: var(--black);">
           Все проекты
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
@@ -513,7 +484,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="../public/logo.png" alt="UP2U" style="height: 36px; filter: brightness(0) invert(1);">
+            <img src="logo.png" alt="UP2U">
           </a>
           <p>Креативное ивент-агентство полного цикла. Создаём события, которые запоминаются.</p>
           <div class="footer-social">
@@ -553,15 +524,23 @@
             <a href="tel:+79140893989">+7 (914) 089-39-89</a>
           </div>
           <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            <a href="tel:+79140875484">+7 (914) 087-54-84</a>
+          </div>
+          <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <a href="mailto:up2uevent.russia@yandex.ru">up2uevent.russia@yandex.ru</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Москва, Россия</span>
           </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p class="footer-copyright">© 2024 UP2U. Все права защищены.</p>
+        <p class="footer-copyright">© 2026 UP2U. Все права защищены.</p>
         <div class="footer-links-bottom">
           <a href="#">Политика конфиденциальности</a>
           <button class="scroll-top" aria-label="Наверх">

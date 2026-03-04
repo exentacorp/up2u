@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Услуги — UP2U Ивент-агентство</title>
-  <meta name="description" content="Услуги ивент-агентства UP2U: организация корпоративных мероприятий, спортивных фестивалей, культурных проектов и городских праздников в Москве.">
+  <meta name="description" content="Полный спектр услуг ивент-агентства UP2U: корпоративные мероприятия, спортивные события, культурные проекты, городские праздники.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+  <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="container">
       <a href="index.html" class="logo">
-        <img src="../public/logo.png" alt="UP2U">
+        <img src="logo.png" alt="UP2U">
       </a>
       <nav class="nav-desktop">
         <a href="index.html#about" class="nav-link">О компании</a>
@@ -42,7 +42,7 @@
   <div class="mobile-menu">
     <div class="mobile-menu-header">
       <a href="index.html" class="logo">
-        <img src="../public/logo.png" alt="UP2U" style="height: 32px;">
+        <img src="logo.png" alt="UP2U" style="height: 32px;">
       </a>
       <button class="mobile-menu-close" aria-label="Закрыть меню">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -63,167 +63,234 @@
     </div>
   </div>
 
-  <!-- Page Header -->
+  <!-- Hero Section -->
   <section class="page-header">
     <div class="container">
       <span class="section-label">Услуги</span>
       <h1>Полный спектр услуг для вашего мероприятия</h1>
       <p>От разработки концепции до технической реализации — мы берём на себя все этапы организации</p>
-      <a href="#contact" class="btn btn-primary btn-lg" style="margin-top: 2rem;">
+      <a href="#contact" class="btn btn-primary btn-lg" style="margin-top: 1.5rem;">
         Обсудить проект
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- Services Content -->
-  <section class="page-content">
+  <!-- Services Section -->
+  <section class="services">
     <div class="container">
-      
-      <!-- Спортивные события -->
-      <div id="sport" class="service-detail">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Наши услуги</span>
+        <h2 class="section-title">Что мы предлагаем</h2>
+        <p class="section-desc">Полный цикл организации мероприятий: от разработки концепции до технической реализации</p>
+      </div>
+      <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="service-card animate-on-scroll">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="Спортивные события">
+            <div class="service-overlay">
+              <h3 class="service-title">Спортивные события</h3>
+            </div>
           </div>
-          <div class="service-detail-content">
-            <h2>Спортивные события</h2>
-            <p>Организуем городские спортивные фестивали и уикенды с массовыми активностями для всех возрастов. Наши проекты объединяют профессиональных спортсменов и любителей, создавая атмосферу праздника спорта.</p>
-            <p>Мы обеспечиваем полный цикл организации: от разработки концепции и согласования с городскими службами до технического оснащения и медийного сопровождения.</p>
-            <ul class="service-detail-list">
-              <li>Многопрофильные активности и перформансы — спортивные шоу, челленджи и семейные зоны</li>
-              <li>Дни спорта и Олимпийские дни — федеральные и региональные мероприятия</li>
-              <li>Марафоны и велофестивали — массовые забеги и велопрогулки</li>
-              <li>Праздники ГТО — торжественные мероприятия по сдаче норм</li>
-              <li>День футбола, День бега — тематические спортивные праздники</li>
-              <li>Йога-марафоны и фитнес на закате — велнес-мероприятия</li>
-              <li>Массовые тренировки с амбассадорами — занятия с чемпионами</li>
-              <li>Мотивационные кампании и контент-продакшн</li>
+          <div class="service-content">
+            <p class="service-desc">Городские спортивные фестивали и уикенды с массовыми активностями</p>
+            <ul class="service-list">
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Многопрофильные активности и перформансы</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Дни спорта и Олимпийские дни</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Марафоны и велофестивали</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Праздники ГТО</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>День футбола, День бега</span></li>
             </ul>
           </div>
         </div>
-      </div>
-
-      <!-- Культурные проекты -->
-      <div id="culture" class="service-detail">
-        <div class="service-detail-grid reverse">
-          <div class="service-detail-image">
+        <div class="service-card animate-on-scroll">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80" alt="Культурные проекты">
+            <div class="service-overlay">
+              <h3 class="service-title">Культурные проекты</h3>
+            </div>
           </div>
-          <div class="service-detail-content">
-            <h2>Культурные проекты</h2>
-            <p>Создаём городские фестивали и сезонные программы для всех возрастов. Наши культурные проекты — это не просто мероприятия, а целые истории, которые погружают участников в уникальную атмосферу.</p>
-            <p>Мы работаем с лучшими артистами, театрами и творческими коллективами, чтобы создавать незабываемые впечатления.</p>
-            <ul class="service-detail-list">
-              <li>Акустические и камерные концерты — музыкальные вечера в парках</li>
-              <li>Театрализованные перформансы — интерактивные постановки</li>
-              <li>Литературные вечера — встречи с писателями и чтения</li>
-              <li>Арт-пространства под открытым небом — временные инсталляции</li>
-              <li>Творческие мастерские — мастер-классы для детей и взрослых</li>
-              <li>Уличные выставки и арт-инсталляции</li>
-              <li>Квесты и коллаборации с музеями</li>
-              <li>Праздничные даты и фестивали</li>
+          <div class="service-content">
+            <p class="service-desc">Городские фестивали и сезонные программы для всех возрастов</p>
+            <ul class="service-list">
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Акустические и камерные концерты</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Театрализованные перформансы</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Литературные вечера</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Арт-пространства под открытым небом</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Творческие мастерские</span></li>
             </ul>
           </div>
         </div>
-      </div>
-
-      <!-- Корпоративные мероприятия -->
-      <div id="corporate" class="service-detail">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
+        <div class="service-card animate-on-scroll">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Корпоративные мероприятия">
+            <div class="service-overlay">
+              <h3 class="service-title">Корпоративные мероприятия</h3>
+            </div>
           </div>
-          <div class="service-detail-content">
-            <h2>Корпоративные мероприятия</h2>
-            <p>Team building, конференции и корпоративные праздники любой масштаба. Мы понимаем, что корпоративное мероприятие — это не просто событие, а инструмент решения бизнес-задач.</p>
-            <p>Наша команда разрабатывает уникальные концепции, которые укрепляют командный дух и создают позитивный имидж компании.</p>
-            <ul class="service-detail-list">
-              <li>Тимбилдинги и корпоративные праздники</li>
-              <li>Конференции и бизнес-форумы</li>
-              <li>Презентации продуктов</li>
-              <li>Юбилеи компаний</li>
-              <li>Новогодние мероприятия</li>
-              <li>Семейные дни для сотрудников</li>
-              <li>HR-ивенты и мотивационные программы</li>
-              <li>Выездные мероприятия</li>
+          <div class="service-content">
+            <p class="service-desc">Team building, конференции и корпоративные праздники любой масштаба</p>
+            <ul class="service-list">
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Тимбилдинги и корпоративные праздники</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Конференции и бизнес-форумы</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Презентации продуктов</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Юбилеи компаний</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Новогодние мероприятия</span></li>
             </ul>
           </div>
         </div>
-      </div>
-
-      <!-- Городские праздники -->
-      <div id="city" class="service-detail">
-        <div class="service-detail-grid reverse">
-          <div class="service-detail-image">
+        <div class="service-card animate-on-scroll">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Городские праздники">
+            <div class="service-overlay">
+              <h3 class="service-title">Городские праздники</h3>
+            </div>
           </div>
-          <div class="service-detail-content">
-            <h2>Городские праздники</h2>
-            <p>Организуем масштабные городские мероприятия, которые становятся настоящими событиями в жизни города. Наши проекты объединяют тысячи людей и создают неповторимую атмосферу.</p>
-            <p>Мы работаем в тесном контакте с городскими службами, обеспечивая безопасность и комфорт всех участников.</p>
-            <ul class="service-detail-list">
-              <li>Дни города — главные городские праздники</li>
-              <li>Национальные праздники — торжества к государственным датам</li>
-              <li>Патриотические мероприятия — День Победы, реконструкции</li>
-              <li>Сезонные фестивали — летние, осенние и зимние программы</li>
-              <li>Районные программы — локальные инициативы</li>
-              <li>Публичные перформансы — музыкальные вечера и уличные шоу</li>
+          <div class="service-content">
+            <p class="service-desc">Масштабные городские мероприятия и общественные события</p>
+            <ul class="service-list">
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Дни города</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Национальные праздники</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Патриотические мероприятия</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Сезонные фестивали</span></li>
             </ul>
           </div>
         </div>
-      </div>
-
-      <!-- Технологические решения -->
-      <div id="tech" class="service-detail">
-        <div class="service-detail-grid">
-          <div class="service-detail-image">
+        <div class="service-card animate-on-scroll">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&q=80" alt="Технологические решения">
+            <div class="service-overlay">
+              <h3 class="service-title">Технологические решения</h3>
+            </div>
           </div>
-          <div class="service-detail-content">
-            <h2>Технологические решения</h2>
-            <p>VR/AR проекты и инновационные форматы для презентаций. Виртуальная и дополненная реальность превращают презентации в иммерсивный опыт.</p>
-            <ul class="service-detail-list">
-              <li>VR-проекты для презентаций — иммерсивные презентации</li>
-              <li>AR-решения и интерактивная навигация</li>
-              <li>R&D и маркетинговые стратегии</li>
-              <li>Цифровые платформы для мероприятий</li>
+          <div class="service-content">
+            <p class="service-desc">VR/AR проекты и инновационные форматы для презентаций</p>
+            <ul class="service-list">
+              <li class="service-list-item"><span class="service-list-dot"></span><span>VR-проекты для презентаций</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>AR-решения и интерактивная навигация</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>R&D и маркетинговые стратегии</span></li>
             </ul>
           </div>
         </div>
-      </div>
-
-      <!-- Дополнительные услуги -->
-      <div id="additional" class="service-detail">
-        <div class="service-detail-grid reverse">
-          <div class="service-detail-image">
+        <div class="service-card animate-on-scroll">
+          <div class="service-image">
             <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Дополнительные услуги">
+            <div class="service-overlay">
+              <h3 class="service-title">Дополнительные услуги</h3>
+            </div>
           </div>
-          <div class="service-detail-content">
-            <h2>Дополнительные услуги</h2>
-            <p>Полный спектр сервисов для организации мероприятий любого масштаба.</p>
-            <ul class="service-detail-list">
-              <li>Разработка концепций — сценарии и режиссура</li>
-              <li>Техническая реализация — звук, свет, видео</li>
-              <li>Анимация и ведущие</li>
-              <li>Декор и оформление</li>
-              <li>Кейтеринг — организация питания</li>
-              <li>Застройка выставок — стенды и экспозиции</li>
+          <div class="service-content">
+            <p class="service-desc">Полный спектр сервисов для организации мероприятий</p>
+            <ul class="service-list">
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Разработка концепций</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Техническая реализация</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Анимация и ведущие</span></li>
+              <li class="service-list-item"><span class="service-list-dot"></span><span>Декор и оформление</span></li>
             </ul>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="contact" style="padding: 4rem 0;">
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
     <div class="container">
       <div class="section-header animate-on-scroll">
-        <h2 class="section-title">Готовы обсудить проект?</h2>
-        <p class="section-desc">Свяжитесь с нами, и мы поможем реализовать вашу идею</p>
-        <a href="contacts.html" class="btn btn-primary btn-lg" style="margin-top: 1.5rem;">Оставить заявку</a>
+        <span class="section-label">Преимущества</span>
+        <h2 class="section-title">Почему выбирают нас</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-title">6+ лет опыта</div>
+          <div class="feature-desc">на рынке ивент-услуг</div>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-title">500+ проектов</div>
+          <div class="feature-desc">реализовано за это время</div>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-title">500K+ участников</div>
+          <div class="feature-desc">на наших мероприятиях</div>
+        </div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-title">Под ключ</div>
+          <div class="feature-desc">полный цикл организации</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info animate-on-scroll">
+          <span class="section-label">Свяжитесь с нами</span>
+          <h2 class="section-title" style="text-align: left;">Оставьте заявку на расчёт</h2>
+          <p class="contact-desc">Расскажите о вашем проекте, и мы свяжемся с вами в течение 24 часов для обсуждения деталей и подготовки индивидуального предложения.</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Телефон</div>
+                <div class="contact-method-value"><a href="tel:+79140893989">+7 (914) 089-39-89</a></div>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Email</div>
+                <div class="contact-method-value"><a href="mailto:up2uevent.russia@yandex.ru">up2uevent.russia@yandex.ru</a></div>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-method-label">Контактное лицо</div>
+                <div class="contact-method-value">Филипп Ермак</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap animate-on-scroll">
+          <form class="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="name">Ваше имя *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Как к вам обращаться?" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact">Телефон или Email *</label>
+              <input type="text" id="contact" name="contact" class="form-input" placeholder="+7 (___) ___-__-__ или email@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="eventType">Тип мероприятия *</label>
+              <select id="eventType" name="eventType" class="form-input" required>
+                <option value="">Выберите тип мероприятия</option>
+                <option value="corporate">Корпоративное мероприятие</option>
+                <option value="sport">Спортивное событие</option>
+                <option value="culture">Культурный проект</option>
+                <option value="city">Городской праздник</option>
+                <option value="team-building">Тимбилдинг</option>
+                <option value="other">Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Сообщение</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Расскажите подробнее о вашем проекте..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              Отправить заявку
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -234,9 +301,9 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <img src="../public/logo.png" alt="UP2U" style="height: 36px; filter: brightness(0) invert(1);">
+            <img src="logo.png" alt="UP2U">
           </a>
-          <p>Креативное ивент-агентство полного цикла.</p>
+          <p>Креативное ивент-агентство полного цикла. Создаём события, которые запоминаются.</p>
           <div class="footer-social">
             <a href="https://instagram.com/up2u_event" target="_blank" rel="noopener" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -261,10 +328,10 @@
         <div>
           <h4 class="footer-title">Услуги</h4>
           <nav class="footer-links">
-            <a href="#corporate">Корпоративные мероприятия</a>
-            <a href="#sport">Спортивные события</a>
-            <a href="#culture">Культурные проекты</a>
-            <a href="#city">Городские праздники</a>
+            <a href="services.html">Корпоративные мероприятия</a>
+            <a href="services.html">Спортивные события</a>
+            <a href="services.html">Культурные проекты</a>
+            <a href="services.html">Городские праздники</a>
           </nav>
         </div>
         <div>
@@ -274,15 +341,23 @@
             <a href="tel:+79140893989">+7 (914) 089-39-89</a>
           </div>
           <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            <a href="tel:+79140875484">+7 (914) 087-54-84</a>
+          </div>
+          <div class="footer-contact-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <a href="mailto:up2uevent.russia@yandex.ru">up2uevent.russia@yandex.ru</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Москва, Россия</span>
           </div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p class="footer-copyright">© 2024 UP2U. Все права защищены.</p>
+        <p class="footer-copyright">© 2026 UP2U. Все права защищены.</p>
         <div class="footer-links-bottom">
           <a href="#">Политика конфиденциальности</a>
           <button class="scroll-top" aria-label="Наверх">
